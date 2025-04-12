@@ -24,10 +24,10 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <div className="w-1/2 h-full flex justify-center items-start overflow-hidden pt-8">
+      <div className="w-1/2 h-full flex justify-center items-start overflow-hidden">
         <img
           src={heroImg}
-          className="h-[1000px] object-start bg-cover "
+          className="h-[700px] object-start bg-cover "
           alt=""
         />
       </div>

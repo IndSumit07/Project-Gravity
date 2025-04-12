@@ -6,31 +6,31 @@ import bestSeller from "../../Products/FeaturedProducts/bestSeller";
 import featuredMenPromotion from "../../assets/Featured-Men-Pic.png";
 import { Link } from "react-router-dom";
 import featuredWomenPromotion from "../../assets/Featured-Women-Pic.png";
-const Featured = () => {
-  const [featuredSection, setFeaturedSection] = useState("newArrivals");
-  const handleFeaturedSection = (prop) => {
-    setFeaturedSection(prop);
+const GenderCollection = () => {
+  const [genderCollectionSection, setGenderCollectionSection] = useState("men");
+  const handleGenderCollectionSection = (prop) => {
+    setGenderCollectionSection(prop);
   };
   return (
-    <div className="w-full min-h-[100vh] h-auto py-10  px-10">
+    <div className="w-full min-h-[100vh] h-auto py-10 px-10">
       {/* Heading */}
       <div className="flex justify-center items-center pt-5">
-        <h1 className="text-4xl text-[#1E1E1E] font-bold">Featured Products</h1>
+        <h1 className="text-4xl text-[#1E1E1E] font-bold">Gender Collection</h1>
       </div>
 
-      {/* Featured Navigation */}
+      {/* Gender Collection Navigation */}
       <div className="flex justify-center items-center gap-5 py-10">
         <p
           onClick={() => {
-            handleFeaturedSection("newArrivals");
+            handleGenderCollectionSection("men");
           }}
           className={`cursor-pointer text-lg font-medium transition-all duration-300 ${
-            featuredSection === "newArrivals"
+            GenderCollection === "newArrivals"
               ? "text-black -translate-y-2"
               : "text-gray-600 "
           }`}>
-          New Arrival
-          {featuredSection === "newArrivals" ? (
+          Men
+          {genderCollectionSection === "men" ? (
             <hr className="border-black border-[1.5px]" />
           ) : (
             ""
@@ -38,15 +38,15 @@ const Featured = () => {
         </p>
         <p
           onClick={() => {
-            handleFeaturedSection("topRated");
+            handleGenderCollectionSection("women");
           }}
           className={`cursor-pointer text-lg font-medium transition-all duration-300 ${
-            featuredSection === "topRated"
+            genderCollectionSection === "women"
               ? "text-black -translate-y-2"
               : "text-gray-600"
           }`}>
-          Top Rated
-          {featuredSection === "topRated" ? (
+          Women
+          {genderCollectionSection === "women" ? (
             <hr className="border-black border-[1.5px]" />
           ) : (
             ""
@@ -54,15 +54,15 @@ const Featured = () => {
         </p>
         <p
           onClick={() => {
-            handleFeaturedSection("bestSeller");
+            handleGenderCollectionSection("kids");
           }}
           className={`cursor-pointer text-lg font-medium transition-all duration-300 ${
-            featuredSection === "bestSeller"
+            genderCollectionSection === "kids"
               ? "text-black -translate-y-2 "
               : "text-gray-600"
           }`}>
-          Best Sellers
-          {featuredSection === "bestSeller" ? (
+          Kids
+          {genderCollectionSection === "kids" ? (
             <hr className="border-black border-[1.5px]" />
           ) : (
             ""
@@ -72,11 +72,11 @@ const Featured = () => {
 
       {/* Featured Products */}
       <div className="flex flex-wrap gap-8  justify-center items-center mb-24">
-        {featuredSection === "newArrivals"
+        {genderCollectionSection === "men"
           ? newArrivals.map((product) => (
               <FeaturedProductCard props={product} />
             ))
-          : featuredSection === "topRated"
+          : genderCollectionSection === "women"
           ? topRated.map((product) => <FeaturedProductCard props={product} />)
           : bestSeller.map((product) => (
               <FeaturedProductCard props={product} />
@@ -132,4 +132,4 @@ const Featured = () => {
   );
 };
 
-export default Featured;
+export default GenderCollection;
