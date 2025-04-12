@@ -1,6 +1,6 @@
 import React from "react";
-import homeGirlPic from "../assets/home-girl-pic.png";
-
+import homeGirlPic from "../../assets/home-girl-pic.png";
+import { Link } from "react-router-dom";
 const DealsSection = () => {
   return (
     <div className="w-full h-auto min-h-[100vh] bg-white">
@@ -48,9 +48,11 @@ const DealsSection = () => {
           <h3 className="text-5xl font-medium text-[#545454] mb-10">
             Up to 75% Off
           </h3>
-          <button className="text-xl px-6 py-4 rounded-full border border-black hover:bg-black hover:text-white transition-all duration-300">
-            Shop Now
-          </button>
+          <Link to="/women">
+            <button className="text-xl px-6 py-4 rounded-full border border-black hover:bg-black hover:text-white transition-all duration-300">
+              Shop Now
+            </button>
+          </Link>
         </div>
       </div>
     </div>

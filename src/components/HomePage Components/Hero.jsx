@@ -1,5 +1,5 @@
 import React from "react";
-import heroImg from "../assets/Hero-Img.png";
+import heroImg from "../../assets/Hero-Img.png";
 const Hero = () => {
   return (
     <div className="w-full h-[calc(100vh-100px)] bg-[#1E1E1E] text-white px-20 flex justify-center items-center">
