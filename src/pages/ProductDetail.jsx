@@ -3,12 +3,21 @@ import { useParams } from "react-router-dom";
 import newArrivals from "../Products/FeaturedProducts/NewArrivals";
 import topRated from "../Products/FeaturedProducts/topRated";
 import bestSeller from "../Products/FeaturedProducts/bestSeller";
-
+import MenCollection from "../Products/Collections/MenCollection";
+import WomenCollection from "../Products/Collections/WomenCollection";
+import KidsCollection from "../Products/Collections/KidsCollection";
 const ProductDetail = () => {
   const { id } = useParams();
 
   // Combine all product arrays
-  const allProducts = [...newArrivals, ...topRated, ...bestSeller];
+  const allProducts = [
+    ...newArrivals,
+    ...topRated,
+    ...bestSeller,
+    ...MenCollection,
+    ...WomenCollection,
+    ...KidsCollection,
+  ];
 
   // Find the product by ID
   const product = allProducts.find((item) => item.id === id);

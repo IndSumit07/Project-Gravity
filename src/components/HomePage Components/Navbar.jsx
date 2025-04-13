@@ -16,16 +16,16 @@ const Navbar = () => {
           Home
         </NavLink>
         <NavLink
-          to="/all"
+          to="/collections/all"
           className={({ isActive }) =>
             `text-lg font-medium hover:text-white hover:mb-4 transition-all duration-300 ${
               isActive ? "text-white border-b-2 mb-4" : ""
             }`
           }>
-          All Products
+          All Collection
         </NavLink>
         <NavLink
-          to="/men"
+          to="/collections/men"
           className={({ isActive }) =>
             `text-lg font-medium hover:text-white hover:mb-4 transition-all duration-300 ${
               isActive ? "text-white border-b-2 mb-4" : ""
@@ -34,7 +34,7 @@ const Navbar = () => {
           Men
         </NavLink>
         <NavLink
-          to="/women"
+          to="/collections/women"
           className={({ isActive }) =>
             `text-lg font-medium hover:text-white hover:mb-4 transition-all duration-300 ${
               isActive ? "text-white border-b-2 mb-4" : ""
@@ -43,7 +43,7 @@ const Navbar = () => {
           Women
         </NavLink>
         <NavLink
-          to="/kids"
+          to="/collections/kids"
           className={({ isActive }) =>
             `text-lg font-medium hover:text-white hover:mb-4 transition-all duration-300 ${
               isActive ? "text-white border-b-2 mb-4" : ""

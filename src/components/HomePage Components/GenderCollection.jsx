@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import FeaturedProductCard from "../../Cards/FeaturedProductCard";
-import newArrivals from "../../Products/FeaturedProducts/NewArrivals";
-import topRated from "../../Products/FeaturedProducts/topRated";
-import bestSeller from "../../Products/FeaturedProducts/bestSeller";
+import MenCollection from "../../Products/Collections/MenCollection";
+import WomenCollection from "../../Products/Collections/WomenCollection";
+import KidsCollection from "../../Products/Collections/KidsCollection";
 import featuredMenPromotion from "../../assets/Featured-Men-Pic.png";
 import { Link } from "react-router-dom";
 import featuredWomenPromotion from "../../assets/Featured-Women-Pic.png";
@@ -11,6 +11,13 @@ const GenderCollection = () => {
   const handleGenderCollectionSection = (prop) => {
     setGenderCollectionSection(prop);
   };
+
+  const products =
+    genderCollectionSection === "men"
+      ? MenCollection.splice(0, 10)
+      : genderCollectionSection === "women"
+      ? WomenCollection.splice(0, 10)
+      : KidsCollection.splice(0, 10);
   return (
     <div className="w-full min-h-[100vh] h-auto py-10 px-10">
       {/* Heading */}
@@ -70,17 +77,19 @@ const GenderCollection = () => {
         </p>
       </div>
 
-      {/* Featured Products */}
-      <div className="flex flex-wrap gap-8  justify-center items-center mb-24">
-        {genderCollectionSection === "men"
-          ? newArrivals.map((product) => (
-              <FeaturedProductCard props={product} />
-            ))
-          : genderCollectionSection === "women"
-          ? topRated.map((product) => <FeaturedProductCard props={product} />)
-          : bestSeller.map((product) => (
-              <FeaturedProductCard props={product} />
-            ))}
+      {/* Gender Products */}
+      <div className="flex flex-wrap gap-8  justify-center items-center mb-16">
+        {products.map((product) => (
+          <FeaturedProductCard props={product} />
+        ))}
+      </div>
+
+      <div className="flex justify-center items-center mb-16">
+        <Link
+          to={`/collections/${genderCollectionSection}`}
+          className="text-md font-bold rounded-full px-6 py-3 border border-black hover:bg-black hover:text-white transition-all duration-300">
+          View All
+        </Link>
       </div>
 
       {/* Offers Section */}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const FeaturedProductCard = ({ props }) => {
   return (
-    <Link to={`/product/${props.id}`}>
+    <Link key={props.id} to={`/product/${props.id}`}>
       <div className="w-[250px] h-[320px] bg-gray-500 overflow-hidden">
         <img src={props.image} alt="" className="bg-cover" />
       </div>
