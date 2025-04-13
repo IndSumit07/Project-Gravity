@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FeaturedProductCard = ({ props }) => {
   return (
-    <div>
+    <Link to={`/product/${props.id}`}>
       <div className="w-[250px] h-[320px] bg-gray-500 overflow-hidden">
         <img src={props.image} alt="" className="bg-cover" />
       </div>
@@ -17,7 +18,7 @@ const FeaturedProductCard = ({ props }) => {
         <p className="inline-block ml-2">(10)</p>
       </div>
       <div className="mt-1 font-bold text-lg">$149.00 - 250.00</div>
-    </div>
+    </Link>
   );
 };
 

@@ -108,7 +108,7 @@ const Featured = () => {
         </div>
         <div className="w-1/2 h-[300px] bg-[#D5C5C0] relative overflow-hidden">
           <img
-            className="w-full absolute -right-28   "
+            className="w-full absolute -right-28"
             src={featuredWomenPromotion}
             alt=""
           />
