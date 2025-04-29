@@ -7,8 +7,8 @@ const FeaturedProductCard = ({ props }) => {
       <div className="w-[250px] h-[320px] bg-gray-500 overflow-hidden">
         <img src={props.image} alt="" className="bg-cover" />
       </div>
-      <p className="text-sm font-medium mt-2 text-gray-00">Top and Suits</p>
-      <h5 className="text-lg">White and red suit </h5>
+      <p className="text-xl font-medium mt-2 text-gray-00">{props.name}</p>
+      <h5 className="text-sm max-w-[250px]">{props.description} </h5>
       <div className="">
         <i className="text-yellow-500 fa-solid fa-star"></i>
         <i className="text-yellow-500 fa-solid fa-star"></i>

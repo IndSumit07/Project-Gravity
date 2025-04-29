@@ -1,10 +1,13 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate(); // For navigation on icon click
+
   return (
     <div className="w-full h-[100px] bg-[#1e1e1e] text-white flex justify-between items-center px-20">
       <div className="text-2xl font-black">Gravity.Shop</div>
+
       <div className="flex justify-center items-center gap-10 text-[#ababab]">
         <NavLink
           to="/"
@@ -61,9 +64,12 @@ const Navbar = () => {
           Contact
         </NavLink>
       </div>
+
       <div className="flex gap-4">
         <i className="text-2xl font-medium ri-search-line"></i>
-        <i className="text-2xl font-medium ri-shopping-cart-line"></i>
+        <i
+          className="text-2xl font-medium ri-shopping-cart-line cursor-pointer"
+          onClick={() => navigate("/cart")}></i>
       </div>
     </div>
   );
