@@ -15,9 +15,9 @@ const FeaturedProductCard = ({ props }) => {
         <i className="text-yellow-500 fa-solid fa-star"></i>
         <i className="text-yellow-500 fa-solid fa-star"></i>
         <i className="text-yellow-500 fa-solid fa-star"></i>
-        <p className="inline-block ml-2">(10)</p>
+        <p className="inline-block ml-2">({props.reviews})</p>
       </div>
-      <div className="mt-1 font-bold text-lg">$149.00 - 250.00</div>
+      <div className="mt-1 font-bold text-lg">${props.price}</div>
     </Link>
   );
 };
